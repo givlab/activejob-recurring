@@ -14,11 +14,11 @@ module Activejob
 
       private
         def schedule_recurring_job(klass)
-          schedle_cron_recurring_job(klass)
-          schedle_every_recurring_job(klass)
+          schedule_cron_recurring_job(klass)
+          schedule_every_recurring_job(klass)
         end
 
-        def schedle_cron_recurring_job(klass)
+        def schedule_cron_recurring_job(klass)
           recurrence = klass._recurrences[:cron]
           return unless recurrence.present?
           puts "Scheduling #{klass.name} with cron #{recurrence}"
@@ -28,7 +28,7 @@ module Activejob
           end
         end
 
-        def schedle_every_recurring_job(klass)
+        def schedule_every_recurring_job(klass)
           recurrence = klass._recurrences[:every]
           return unless recurrence.present?
           puts "Scheduling #{klass.name} every #{recurrence}"

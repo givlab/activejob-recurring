@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Activejob
   module Recurring
     class Railtie < ::Rails::Railtie

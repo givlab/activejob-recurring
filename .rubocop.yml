@@ -1,25 +1,10 @@
-require: './ci/custom_cops/lib/custom_cops'
-
 AllCops:
   TargetRubyVersion: 2.4
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
   Exclude:
-    - '**/templates/**/*'
-    - '**/vendor/**/*'
-    - 'actionpack/lib/action_dispatch/journey/parser.rb'
-    - 'railties/test/fixtures/tmp/**/*'
-
-# Prefer assert_not_x over refute_x
-CustomCops/RefuteNot:
-  Include:
-    - '**/test/**/*'
-
-# Prefer assert_not over assert !
-CustomCops/AssertNot:
-  Include:
-    - '**/test/**/*'
+    - 'test/dummy'
 
 # Prefer &&/|| over and/or.
 Style/AndOr:

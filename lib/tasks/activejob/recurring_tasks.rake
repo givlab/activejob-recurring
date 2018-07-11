@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :activejob do
   namespace :recurring do
     desc "Start recurring job scheduler"

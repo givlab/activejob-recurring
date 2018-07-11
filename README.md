@@ -1,3 +1,4 @@
+
 # ActiveJob Recurring
 Run jobs recurring. This gem uses [Rufus Scheduler](https://github.com/jmettraux/rufus-scheduler) to run recurring jobs.
 

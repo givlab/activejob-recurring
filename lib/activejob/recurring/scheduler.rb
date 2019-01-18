@@ -12,6 +12,17 @@ module Activejob
         end
       end
 
+      def join
+        Signal.trap("INT")  { shutdown(:wait) }
+        Signal.trap("TERM") { shutdown(:wait) }
+        super
+      end
+
+      def shutdown(opt = nil)
+        puts "Shutting down with option #{opt.inspect}"
+        super
+      end
+
       private
         def schedule_recurring_job(klass)
           schedule_cron_recurring_job(klass)
